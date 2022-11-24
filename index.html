@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ECharts</title>
+    <!-- Include the ECharts file you just downloaded -->
+    <script src="echart.js"></script>
+  </head>
+  <body>
+    <!-- Prepare a DOM with a defined width and height for ECharts -->
+    <div id="main" style="width: 600px; height: 400px"></div>
+    <script type="text/javascript">
+      var chartDom = document.getElementById("main");
+      var myChart = echarts.init(chartDom);
+      var option;
+
+      option = {
+        // title: {
+        //   text: "Referer of a Website",
+        //   subtext: "Fake Data",
+        //   left: "center",
+        // },
+        backgroundColor: "#1c1c1c",
+        textStyle: {
+          color: "#fff",
+          fontSize: 14,
+        },
+        tooltip: {
+          trigger: "item",
+          show: false,
+        },
+        legend: {
+          orient: "vertical",
+          left: "right",
+          show: false,
+        },
+        series: [
+          {
+            name: "Access From",
+            type: "pie",
+            radius: "70%",
+            color: [
+              "#614fc8",
+              "#917ff6",
+              "#c3b9f9",
+              "#f6cc98",
+              "#daa96f",
+              "#b98b4f",
+              "#684d2b",
+              "#174837",
+              "#1a6048",
+              "#248a67",
+              "#34bc8b",
+              "#79f8ca",
+            ],
+            data: [
+              { value: 11, name: "Startups (11)" },
+              { value: 2, name: "Cryptocurrencies (2)" },
+              // { value: 580, name: "Listed Equities" },
+              { value: 14, name: "Real Estate (14)" },
+              { value: 20, name: "Equipment Finance (20)" },
+              { value: 14, name: "Litigation Finance (14)" },
+              { value: 9, name: "Agronomy (9)" },
+              { value: 5, name: "Art (5)" },
+              { value: 9, name: "Music Royalty (9)" },
+              { value: 1, name: "Collectibles (1)" },
+              { value: 2, name: "Wine (2)" },
+              { value: 5, name: "Carbon credit (5)" },
+              { value: 8, name: "Cash (8)" },
+            ],
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: "rgba(0, 0, 0, 0.5)",
+              },
+            },
+          },
+        ],
+      };
+
+      option && myChart.setOption(option);
+    </script>
+  </body>
+</html>
